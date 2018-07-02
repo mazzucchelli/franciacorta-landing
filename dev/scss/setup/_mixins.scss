@@ -1,0 +1,11 @@
+@mixin extend-palette {
+    @each $color, $hex in $brand-palette {
+        .color-#{$color} {
+            color: $hex !important;
+        }
+
+        .bg-#{$color} {
+            background-color: $hex;
+        }
+    }
+}
