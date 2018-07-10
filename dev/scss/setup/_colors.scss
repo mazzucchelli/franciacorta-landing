@@ -1,0 +1,9 @@
+$brand-palette: (
+    black: #000000,
+    white: #ffffff,
+    orange: #FC4500
+);
+
+$black: map-get($brand-palette, black);
+$white: map-get($brand-palette, white);
+$orange: map-get($brand-palette, orange);

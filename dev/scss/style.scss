@@ -1,0 +1,347 @@
+@import 'setup/setup';
+@import 'plugins/plugins';
+
+@include extend-palette;
+
+.tb {
+    position: fixed;
+    height: 100vh;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    transform: translateX(100vw);
+}
+
+.tb-a {
+    background: $white;
+    width: 100vw;
+    animation-delay: 1s;
+    // animation: slideA 1.6s;
+    &.anim-in {
+        animation: slideA 2.2s;
+    }
+}
+
+.tb-b {
+    background: $black;
+    width: 80vw;
+    animation-delay: 0.8s;
+    // animation: slideB 1.8s;
+    &.anim-in {
+        animation: slideB 2.8s;
+    }
+}
+
+.tb-c {
+    background: $orange;
+    width: 100vw;
+    animation-delay: 0.6s;
+    // animation: slideC 2s;
+    &.anim-in {
+        animation: slideC 2.4s;
+    }
+}
+
+main {
+    position: relative;
+    opacity: 0;
+    pointer-events: none;
+    width: 100vw;
+    transition: transform 2s, opacity 6s;
+    transition-delay: .5s;
+    background: $black;
+
+    &.tb {
+        transform: translateX(400px);
+    }
+
+    &.anim-in {
+        opacity: 1;
+        transform: translateX(0);
+        pointer-events: all;
+    }
+
+    &.anim-out {
+        transition: transform 1s, opacity .5s;
+        opacity: 0;
+        transform: translateX(400px);
+        pointer-events: none;
+    }
+
+    .small-logo {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        z-index: 10;
+    }
+
+    .close-btn {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        z-index: 10;
+    }
+}
+
+header {
+    background: $black;
+    color: $orange;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    position: relative;
+
+    .pictogram {
+        margin-bottom: 16px;
+    }
+
+    .center-container {
+        transition: transform 4s ease-out, opacity 1s;
+
+        &.anim-out {
+            opacity: 0;
+            transform: translatex(-400px);
+        }
+    }
+}
+
+.title {
+    margin: 0;
+    text-align: center;
+
+    > div {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: all .4s ease-out;
+    }
+
+    &-primary {
+        margin-bottom: 12px;
+    }
+
+    &-secondary {
+        font-size: 10px;
+    }
+
+    svg {
+        display: inline-block;
+    }
+
+    &.anim-in {
+        .title-primary {
+            opacity: 1;
+            transform: translateY(0);
+            transition-delay: 2s;
+        }
+
+        .title-secondary {
+            opacity: 1;
+            transform: translateY(0);
+            transition-delay: 2.2s;
+        }
+    }
+}
+
+.load-bar-wrap {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.load-bar {
+    position: relative;
+    width: 40px;
+    height: 3px;
+    display: block;
+    transition: transform .6s ease-in-out;
+    transition-delay: .5s;
+
+    &.anim-out {
+        transform: scaleX(0);
+    }
+}
+
+.bar {
+    content: "";
+    display: inline;
+    width: 0;
+    height: 100%;
+    position: absolute;
+    text-align: center;
+    border-radius: 6px;
+
+    &:nth-child(1) {
+        background-color: $white;
+        animation: loading 1s ease-in-out infinite;
+    }
+
+    &:nth-child(2) {
+        background-color: $orange;
+        animation: loading 1s ease-in-out .3s infinite;
+    }
+}
+
+.cover,
+.cover video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.ending-box {
+    opacity: 0;
+    display: flex;
+    flex-wrap: wrap;
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+
+    .left-box {
+        position: relative;
+        z-index: 2;
+        width: 50%;
+        background: $white;
+        transform: translateX(-50vw);
+        transition: transform .8s ease-in-out;
+    }
+
+    .right-box {
+        position: relative;
+        z-index: 1;
+        width: 50%;
+        opacity: 0;
+        display: flex;
+        flex-wrap: wrap;
+        transform: translateX(-100vw);
+        transition: transform .8s ease-in-out, opacity 1.2s;
+
+        figure {
+            width: 25vw;
+            height: 50vh;
+            margin: 0;
+            overflow: hidden;
+
+            // img {
+            //     opacity: 0;
+            //     transform: translateX(-100%);
+            //     transition: all .4s ease-out;
+            // }
+
+            // &:nth-child(1) {
+            //     img {
+            //         transition-delay: .4s;
+            //     }
+            // }
+
+            // &:nth-child(2) {
+            //     img {
+            //         transition-delay: .5s;
+            //     }
+            // }
+
+            // &:nth-child(3) {
+            //     img {
+            //         transition-delay: .6s;
+            //     }
+            // }
+
+            // &:nth-child(4) {
+            //     img {
+            //         transition-delay: .7s;
+            //     }
+            // }
+        }
+    }
+
+    &.anim-in {
+        opacity: 1;
+        pointer-events: all;
+
+        .left-box {
+            transform: translateX(0);
+        }
+
+        .right-box {
+            transform: translateX(0);
+            opacity: .6;
+
+            // img {
+            //     opacity: .6;
+            //     transform: translateX(0);
+            // }
+        }
+    }
+}
+
+[data-marker-time="9.5"] {
+    &:before {
+        content: '';
+        top: -10px;
+
+    }
+
+    &:after {
+        content: '';
+        top: calc(100% + 10px);
+    }
+}
+
+// [data-marker-time="9.5"] {
+
+// }
+
+// [data-marker-time="9.5"] {
+
+// }
+
+// [data-marker-time="9.5"] {
+
+// }
+
+.vjs-play-control {
+    &:before {
+        content: "\f101";
+        font-family: VideoJS;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 1.8em;
+        line-height: 1.67;
+    }
+
+    span {
+        display: none;
+    }
+}
+
+.video-js .vjs-control-bar {
+    height: 80px;
+}
+
+.video-js .vjs-mute-control {
+    &:before {
+        content: "\f107";
+        font-family: VideoJS;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 1.8em;
+        line-height: 1.67;
+    }
+
+    span,
+    &:hover span {
+        display: none;
+    }
+}
+
+.video-js .vjs-volume-control {
+    display: none;
+}

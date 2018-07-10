@@ -1,0 +1,52 @@
+@keyframes loading {
+    0% {
+        left: 50%;
+        width: 0;
+        z-index: 100;
+    }
+    30% {
+        left: 0;
+        width: 100%;
+        z-index: 10;
+    }
+    100% {
+        left: 0;
+        width: 100%;
+    }
+}
+
+@keyframes slideA {
+    0% {
+        transform: translateX(100vw);
+    }
+    70% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100vw);
+    }
+}
+
+@keyframes slideB {
+    0% {
+        transform: translateX(100vw);
+    }
+    50% {
+        transform: translateX(80vw);
+    }
+    100% {
+        transform: translateX(-100vw);
+    }
+}
+
+@keyframes slideC {
+    0% {
+        transform: translateX(100vw);
+    }
+    70% {
+        transform: translateX(-100vw);
+    }
+    100% {
+        transform: translateX(-100vw);
+    }
+}
