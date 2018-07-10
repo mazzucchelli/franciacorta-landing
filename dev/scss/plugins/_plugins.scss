@@ -1,0 +1,19 @@
+@import 'videojs';
+@import 'videojs-markers';
+
+.video-js {
+    height: 100% !important;
+    padding: 0 !important;
+}
+
+.video-js .vjs-big-play-button,
+.video-js .vjs-fullscreen-control {
+    display: none;
+}
+
+.video-js {
+    .vjs-control-bar {
+        display: flex;
+        background: none;
+    }
+}

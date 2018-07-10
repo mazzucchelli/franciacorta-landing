@@ -35,9 +35,9 @@ module.exports = {
             fonts: dest + 'styles/fonts/'
         },
         vendors: [
-            pkg + 'jquery/dist/jquery.min.js',
-            // pkg + 'foundation-sites/dist/js/foundation.min.js',
-            // pkg + 'what-input/dist/what-input.min.js'
+            pkg + 'video.js/dist/video.min.js',
+            pkg + 'videojs-markers/dist/videojs-markers.min.js',
+            pkg + 'objectFitPolyfill/dist/objectFitPolyfill.basic.min.js'
         ]
     },
     uikit: [

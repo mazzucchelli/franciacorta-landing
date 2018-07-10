@@ -79,6 +79,10 @@
     "vinyl-buffer": "^1.0.1"
   },
   "dependencies": {
-    "normalize-scss": "^7.0.1"
+    "normalize-scss": "^7.0.1",
+    "objectFitPolyfill": "^2.1.1",
+    "video.js": "^7.0.3",
+    "videojs-background": "^1.0.7",
+    "videojs-markers": "^1.0.1"
   }
 }
