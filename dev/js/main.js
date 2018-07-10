@@ -1,14 +1,16 @@
 import { Timeout } from './util/timeout';
 
 window.onload = () => {
+
     objectFitPolyfill();
+
     const loadBar = document.getElementById('load-bar');
     const logoWrap = document.getElementById('logo-wrap');
     const closeVideo = document.getElementById('close-btn');
     const mainBox = document.getElementById('main');
     const endingBox = document.getElementById('ending-box');
     const tb = document.querySelectorAll('.tb');
-    // const didLoad = Timeout.set(greetWorld, 2000)
+
     loadBar.classList.add('anim-out');
     title.classList.add('anim-in');
 
@@ -39,19 +41,4 @@ window.onload = () => {
         endingBox.classList.add('anim-in');
         mainBox.classList.add('anim-out');
     });
-
-    // if (Timeout.exists(greetWorld)) {// true
-    //     console.log('greeting has been scheduled')
-    // }
-
-    // if (Timeout.pending(greetWorld)) {// true
-    //     console.log('greeting is waiting to be issued')
-    // }
-
-    // ...wait for 2 seconds to elapse...
-
-    // if (didLoad()) {// true
-    //     console.log('the greeting was issued')
-    // }
-
 }
