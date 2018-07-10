@@ -1,6 +1,6 @@
 const dev = './dev/';
 const app = './app/';
-const build = './build/';
+const build = './docs/';
 const pkg = './node_modules/';
 
 const dest = (process.env.NODE_ENV == 'prod') ? build : app;
